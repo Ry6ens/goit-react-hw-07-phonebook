@@ -1,6 +1,7 @@
 {
   "name": "goit-react-hw-07-phonebook",
   "version": "0.1.0",
+  "homepage": "https://ry6ens.github.io/goit-react-hw-07-phonebook",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
@@ -14,6 +15,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
