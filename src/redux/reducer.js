@@ -1,40 +1,28 @@
-import { createReducer } from "@reduxjs/toolkit";
+import { createReducer, createSlice } from "@reduxjs/toolkit";
 
-// import {
-//   addContactAction,
-//   removeContactAction,
-//   filterContactAction,
-// } from "./action";
+import { filterContactAction } from "./actions";
 
-import {
-  addContactRequest,
-  addContactSuccess,
-  addContactError,
-  removeContactAction,
-  filterContactAction,
-} from "./action";
-
-const initialState = [];
 const initialFilterState = "";
-
-export const contactReducer = createReducer(initialState, (builder) => {
-  builder.addCase(addContactSuccess, (state, { payload }) => [
-    ...state,
-    payload,
-  ]);
-  builder.addCase(removeContactAction, (state, { payload }) =>
-    state.filter((el) => el.id !== payload)
-  );
-});
 
 export const filterReducer = createReducer(initialFilterState, (builder) => {
   builder.addCase(filterContactAction, (state, { payload }) => {
+    console.log(state);
     return payload;
   });
 });
 
-export const loadingReducer = createReducer(false, {
-  [addContactRequest]: () => true,
-  [addContactSuccess]: () => false,
-  [addContactError]: () => false,
+const getContactsSlice = createSlice({
+  name: "contacts",
+  initialState: [],
+  reducers: {
+    getContacts: (state, { payload }) => payload,
+    removeContacts: (state, { payload }) => {
+      console.log(payload);
+      return state.filter((el) => el.id !== payload);
+    },
+  },
 });
+
+export const { getContacts, removeContacts } = getContactsSlice.actions;
+
+export const { reducer } = getContactsSlice;

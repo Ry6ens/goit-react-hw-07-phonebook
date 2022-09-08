@@ -1,9 +1,8 @@
 import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
-import PropTypes from "prop-types";
 
 import styles from "./Filter.module.scss";
-import { filterContactAction } from "../../redux/action";
+import { filterContactAction } from "../../redux/actions";
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -32,7 +31,3 @@ const Filter = () => {
 };
 
 export default Filter;
-
-Filter.propTypes = {
-  onChangeFilter: PropTypes.func,
-};

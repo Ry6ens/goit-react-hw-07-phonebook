@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
-import Notiflix from "notiflix";
 
 import styles from "./ContactForm.module.scss";
 import stylesButton from "../PhonebookOptions/PhonebookOptions.module.scss";
-// import { addContactAction } from "../../redux/action";
 import PhonebookOptions from "../PhonebookOptions/PhonebookOptions";
-import { addContactAction } from "../../redux/operations";
+import { postContactsOperations } from "../../redux/operations";
 
 export default function Form() {
   const [state, setState] = useState({
@@ -16,7 +14,7 @@ export default function Form() {
   });
 
   const dispatch = useDispatch();
-  const contacts = useSelector((state) => state.contacts.items);
+  // const contacts = useSelector((state) => state.contacts.items);
 
   const { name, phone } = state;
 
@@ -41,9 +39,7 @@ export default function Form() {
   };
 
   function addContact(data) {
-    contacts.find(({ name }) => data.name === name)
-      ? Notiflix.Notify.warning(`${data.name} is already in contacts`)
-      : dispatch(addContactAction(data));
+    dispatch(postContactsOperations(data));
   }
 
   return (
