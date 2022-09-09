@@ -1,7 +1,7 @@
 {
-  "name": "goit-react-hw-07-phonebook",
+  "name": "goit-react-hw-07-phonebook-operations",
   "version": "0.1.0",
-  "homepage": "https://ry6ens.github.io/goit-react-hw-07-phonebook",
+  "homepage": "https://ry6ens.github.io/goit-react-hw-07-phonebook-operations",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
