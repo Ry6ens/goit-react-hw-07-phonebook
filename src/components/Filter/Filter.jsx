@@ -2,7 +2,8 @@ import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 
 import styles from "./Filter.module.scss";
-import { filterContactAction } from "../../redux/actions";
+// import { filterContactAction } from "../../redux/actions";
+import { filterContact } from "../../redux/filter/filter-slice";
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const Filter = () => {
   const filterId = nanoid();
 
   function handleFilter({ target }) {
-    dispatch(filterContactAction(target.value));
+    dispatch(filterContact(target.value));
   }
 
   return (

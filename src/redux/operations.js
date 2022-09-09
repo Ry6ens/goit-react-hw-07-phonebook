@@ -1,13 +1,17 @@
 import Notiflix from "notiflix";
+
 import {
   fetchPostContacts,
   fetchGetContacts,
   fetchDeleteContacts,
 } from "../services/api";
-import { postContact } from "./reducer";
+import {
+  getContacts,
+  removeContacts,
+  postContact,
+} from "./contacts/contacts-slice";
 import { setError, resetError } from "./error/errorSlice";
 import { onLoader, offLoader } from "./loader/loaderSlice";
-import { getContacts, removeContacts } from "./reducer";
 
 const isDuplicate = ({ name }, contacts) => {
   const normalizedName = name.toLowerCase();
