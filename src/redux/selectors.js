@@ -1,4 +1,5 @@
 export const getFilterContacts = (state, payload) => {
+  console.log(state.contacts.items);
   if (state.contacts.items.length === 0) {
     return state.contacts.items;
   }

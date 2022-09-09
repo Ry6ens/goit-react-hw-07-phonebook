@@ -16,13 +16,17 @@ const getContactsSlice = createSlice({
   initialState: [],
   reducers: {
     getContacts: (state, { payload }) => payload,
-    removeContacts: (state, { payload }) => {
+    postContact: (state, { payload }) => {
       console.log(payload);
+      state.push(payload);
+    },
+    removeContacts: (state, { payload }) => {
       return state.filter((el) => el.id !== payload);
     },
   },
 });
 
-export const { getContacts, removeContacts } = getContactsSlice.actions;
+export const { getContacts, postContact, removeContacts } =
+  getContactsSlice.actions;
 
 export const { reducer } = getContactsSlice;

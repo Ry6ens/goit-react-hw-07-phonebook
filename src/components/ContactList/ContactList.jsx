@@ -5,7 +5,6 @@ import styles from "./ContactList.module.scss";
 import stylesButton from "../PhonebookOptions/PhonebookOptions.module.scss";
 import PhonebookOptions from "../PhonebookOptions/PhonebookOptions";
 import { getFilterContacts } from "../../redux/selectors";
-import { removeContacts } from "../../redux/reducer";
 import {
   getContactsOperations,
   removeContactsOperation,
@@ -22,7 +21,6 @@ const ContactList = () => {
   }, []);
 
   function removeContact(id) {
-    dispatch(removeContacts(id));
     dispatch(removeContactsOperation(id));
   }
 

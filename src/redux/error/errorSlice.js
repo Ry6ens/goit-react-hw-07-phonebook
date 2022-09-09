@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const errorSlice = createSlice({
   name: "error",
-  initialState: "",
+  initialState: null,
   reducers: {
     setError: (_, { payload }) => payload,
-    resetError: () => "",
+    resetError: () => null,
   },
 });
 
