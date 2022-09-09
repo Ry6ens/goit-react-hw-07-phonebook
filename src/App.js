@@ -6,7 +6,10 @@ function App() {
   return (
     <Container>
       <Routes>
-        <Route path="/goit-react-hw-07-phonebook" element={<Home />} />
+        <Route
+          path="/goit-react-hw-07-phonebook-operations"
+          element={<Home />}
+        />
       </Routes>
     </Container>
   );
